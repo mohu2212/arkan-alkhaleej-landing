@@ -40,7 +40,7 @@
   <!-- ====== Fonts (self-hosted) ====== -->
   <link rel="preload" href="assets/fonts/tajawal-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/tajawal-700.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="assets/css/styles.css?v=6" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=7" />
 
   <!-- ====== JSON-LD: GeneralContractor ====== -->
   <script type="application/ld+json">
@@ -464,12 +464,24 @@
         <a href="#why">لماذا نحن</a>
         <a href="#contact">تواصل معنا</a>
       </div>
-      <div class="footer__col">
+      <div class="footer__col footer__col--contact">
         <h4>معلومات التواصل</h4>
-        <a href="tel:+966552171713" dir="ltr">0552171713</a>
-        <a href="https://wa.me/966552171713" target="_blank" rel="noopener">تواصل عبر الواتساب</a>
-        <span>خدمة على مدار 24 ساعة طوال الأسبوع</span>
-        <span>الرياض — المملكة العربية السعودية</span>
+        <a class="fc-item" href="tel:+966552171713">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1z"/></svg>
+          <span dir="ltr">0552171713</span>
+        </a>
+        <a class="fc-item" href="https://wa.me/966552171713" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-.607z"/></svg>
+          <span>تواصل عبر الواتساب</span>
+        </a>
+        <span class="fc-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1a11 11 0 1 0 11 11A11 11 0 0 0 12 1Zm1 11.6 4 2.3-1 1.7-5-2.9V6h2Z"/></svg>
+          <span>خدمة على مدار 24 ساعة طوال الأسبوع</span>
+        </span>
+        <span class="fc-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7Zm0 4.5A2.5 2.5 0 1 0 12 11.5 2.5 2.5 0 0 0 12 6.5Z"/></svg>
+          <span>الرياض — المملكة العربية السعودية</span>
+        </span>
       </div>
     </div>
     <div class="footer__bar">
@@ -510,6 +522,6 @@
     </figure>
   </div>
 
-  <script src="assets/js/main.js?v=6" defer></script>
+  <script src="assets/js/main.js?v=7" defer></script>
 </body>
 </html>

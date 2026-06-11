@@ -267,6 +267,10 @@ svg{width:1em;height:1em;fill:currentColor}
 .footer__col a,.footer__col span{display:block;padding:.3rem 0;font-size:.95rem;transition:color .2s}
 .footer__col a:hover{color:var(--gold)}
 .footer__col a[dir=ltr]{direction:ltr;text-align:right}
+/* contact items with icons */
+.footer__col--contact .fc-item{display:flex;align-items:center;gap:.6rem;justify-content:flex-start}
+.fc-item svg{width:18px;height:18px;flex-shrink:0;color:var(--gold)}
+.fc-item span[dir=ltr]{direction:ltr}
 .footer__bar{border-top:1px solid rgba(255,255,255,.1);padding:1.2rem 0}
 .footer__bar-inner{display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
 .footer__bar p{font-size:.85rem;color:#8c97b0}
@@ -408,6 +412,8 @@ svg{width:1em;height:1em;fill:currentColor}
   .footer__brand p{margin-inline:auto;font-size:.88rem;max-width:300px}
   .footer__col h4{margin-bottom:.5rem}
   .footer__col a,.footer__col span{padding:.18rem 0;line-height:1.5;font-size:.92rem}
+  .footer__col--contact .fc-item{justify-content:center;padding:.32rem 0}
+  .footer__col--contact .fc-item span{text-align:start}
 
   /* Floating + sticky CTA */
   .mobile-cta{display:flex}
