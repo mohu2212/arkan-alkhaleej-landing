@@ -325,7 +325,7 @@ svg{width:1em;height:1em;fill:currentColor}
   .nav.is-open{transform:translateX(0)}
   .nav__link{padding:.95rem .6rem;border-bottom:1px solid var(--line);font-size:1.08rem;border-radius:0}
   .nav__link:last-child{border-bottom:0}
-  .nav-toggle{display:flex;margin-inline-start:auto;z-index:61;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+  .nav-toggle{display:flex;position:relative;z-index:62;margin-inline-start:auto;min-width:44px;min-height:44px;align-items:center;justify-content:center}
   body.nav-open{overflow:hidden}
   /* scrim sits BELOW the header stacking context (z-index:50) so the off-canvas nav stays visible above it */
   body.nav-open::after{content:'';position:fixed;inset:0;background:rgba(16,22,40,.5);z-index:45;backdrop-filter:blur(2px)}
