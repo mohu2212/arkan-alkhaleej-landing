@@ -401,10 +401,13 @@ svg{width:1em;height:1em;fill:currentColor}
   .contact__form{padding:1.5rem}
   .field input,.field select,.field textarea{font-size:16px}   /* prevent iOS zoom */
 
-  /* Footer */
-  .footer__grid{grid-template-columns:1fr;gap:1.6rem;text-align:center}
-  .footer__brand p{margin-inline:auto}
-  .footer__col a,.footer__col span{padding:.45rem 0}
+  /* Footer — tighter, cleaner on mobile */
+  .footer{padding-top:2.2rem}
+  .footer__grid{grid-template-columns:1fr;gap:1.4rem;padding-bottom:1.6rem;text-align:center}
+  .footer__brand img{height:48px}
+  .footer__brand p{margin-inline:auto;font-size:.88rem;max-width:300px}
+  .footer__col h4{margin-bottom:.5rem}
+  .footer__col a,.footer__col span{padding:.18rem 0;line-height:1.5;font-size:.92rem}
 
   /* Floating + sticky CTA */
   .mobile-cta{display:flex}
