@@ -267,8 +267,12 @@ svg{width:1em;height:1em;fill:currentColor}
 .footer__col a,.footer__col span{display:block;padding:.3rem 0;font-size:.95rem;transition:color .2s}
 .footer__col a:hover{color:var(--gold)}
 .footer__col a[dir=ltr]{direction:ltr;text-align:right}
-.footer__bar{border-top:1px solid rgba(255,255,255,.1);padding:1.2rem 0;text-align:center}
+.footer__bar{border-top:1px solid rgba(255,255,255,.1);padding:1.2rem 0}
+.footer__bar-inner{display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
 .footer__bar p{font-size:.85rem;color:#8c97b0}
+.footer__powered a{color:var(--gold);font-weight:700;transition:color .2s}
+.footer__powered a:hover{color:#fff;text-decoration:underline}
+@media (max-width:768px){.footer__bar-inner{justify-content:center;text-align:center}}
 
 /* ---------- Floating WhatsApp ---------- */
 .wa-float{position:fixed;inset-inline-start:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;
@@ -323,7 +327,10 @@ svg{width:1em;height:1em;fill:currentColor}
   .nav__link:last-child{border-bottom:0}
   .nav-toggle{display:flex;margin-inline-start:auto;z-index:61;min-width:44px;min-height:44px;align-items:center;justify-content:center}
   body.nav-open{overflow:hidden}
-  body.nav-open::after{content:'';position:fixed;inset:0;background:rgba(16,22,40,.5);z-index:55;backdrop-filter:blur(2px)}
+  /* scrim sits BELOW the header stacking context (z-index:50) so the off-canvas nav stays visible above it */
+  body.nav-open::after{content:'';position:fixed;inset:0;background:rgba(16,22,40,.5);z-index:45;backdrop-filter:blur(2px)}
+  /* hide floating actions while the menu is open so they don't poke through the scrim */
+  body.nav-open .wa-float,body.nav-open .mobile-cta{opacity:0;pointer-events:none}
 
   /* Topbar — condensed to one neat line */
   .topbar{font-size:.74rem}

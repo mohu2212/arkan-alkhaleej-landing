@@ -27,7 +27,8 @@
     document.body.classList.remove('nav-open');
   };
   if (toggle && nav) {
-    toggle.addEventListener('click', () => {
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       const open = nav.classList.toggle('is-open');
       toggle.classList.toggle('is-open', open);
       toggle.setAttribute('aria-expanded', String(open));
