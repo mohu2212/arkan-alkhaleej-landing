@@ -82,7 +82,9 @@ svg{width:1em;height:1em;fill:currentColor}
 .topbar__sep{color:#4a567a}
 
 /* ---------- Header ---------- */
-.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);
+/* ملاحظة: عدم استخدام backdrop-filter هنا — لأنه يجعل الهيدر "containing block"
+   للعناصر position:fixed بداخله (القائمة الجانبية)، فتُحسب أبعادها نسبةً للهيدر لا للشاشة. */
+.header{position:sticky;top:0;z-index:50;background:#fff;
   border-bottom:1px solid var(--line);transition:box-shadow .3s,padding .3s}
 .header.is-scrolled{box-shadow:0 6px 24px rgba(30,42,68,.10)}
 .header__inner{display:flex;align-items:center;gap:1rem;padding:.7rem 0}
