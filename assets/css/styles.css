@@ -328,10 +328,7 @@ svg{width:1em;height:1em;fill:currentColor}
   .container{width:min(100% - 28px,var(--container))}
 
   /* Dropdown nav on mobile */
-  .header__cta{display:flex;gap:.45rem;margin-inline-start:auto}
-  .header__cta .btn{width:44px;height:44px;padding:0;border-radius:14px;font-size:0;box-shadow:none}
-  .header__cta .btn svg{width:1.15em;height:1.15em;margin:0}
-  .header__cta .btn__label{display:none}
+  .header__cta{display:none}
   .nav{position:absolute;top:100%;inset-inline:0;display:flex;flex-direction:column;align-items:stretch;gap:0;
     background:var(--navy-900);margin:0;padding:0 1rem;max-height:0;overflow:hidden;opacity:0;pointer-events:none;
     transition:max-height .35s var(--ease),opacity .2s var(--ease);z-index:49;border-top:1px solid rgba(255,255,255,.08);
@@ -339,7 +336,7 @@ svg{width:1em;height:1em;fill:currentColor}
   .nav.is-open{max-height:420px;opacity:1;pointer-events:auto;padding-top:.6rem;padding-bottom:.9rem}
   .nav__link{padding:.95rem .2rem;border-bottom:1px solid rgba(255,255,255,.08);font-size:1.04rem;border-radius:0;color:#fff;text-align:start}
   .nav__link:last-child{border-bottom:0}
-  .nav-toggle{display:flex;position:relative;z-index:62;margin-inline-start:0;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+  .nav-toggle{display:flex;position:relative;z-index:62;margin-inline-start:auto;min-width:44px;min-height:44px;align-items:center;justify-content:center}
   body.nav-open{overflow:hidden}
   body.nav-open .wa-float,body.nav-open .mobile-cta{opacity:1;pointer-events:auto}
 
