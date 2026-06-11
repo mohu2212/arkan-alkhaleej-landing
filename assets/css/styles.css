@@ -63,6 +63,7 @@ svg{width:1em;height:1em;fill:currentColor}
 }
 .btn svg{width:1.15em;height:1.15em}
 .btn:hover{transform:translateY(-2px)}
+.btn__label{display:inline}
 .btn--gold{background:linear-gradient(135deg,var(--gold),var(--gold-600));color:#fff;box-shadow:0 8px 22px rgba(201,162,75,.4)}
 .btn--gold:hover{box-shadow:0 12px 30px rgba(201,162,75,.55)}
 .btn--wa{background:var(--wa);color:#fff;box-shadow:0 8px 22px rgba(37,211,102,.35)}
@@ -111,15 +112,18 @@ svg{width:1em;height:1em;fill:currentColor}
   linear-gradient(90deg,rgba(22,32,58,.94) 0%,rgba(22,32,58,.78) 45%,rgba(22,32,58,.45) 100%)}
 .hero__content{position:relative;z-index:2;padding:3.5rem 0;max-width:680px}
 .hero__logo{height:88px;width:auto;margin-bottom:1.1rem;filter:drop-shadow(0 6px 20px rgba(0,0,0,.55))}
-.hero__badge{display:inline-block;background:rgba(201,162,75,.18);border:1px solid rgba(201,162,75,.5);
-  color:var(--gold-100);padding:.4rem 1rem;border-radius:999px;font-weight:700;font-size:.92rem;margin-bottom:1.2rem}
+.hero__badges{display:flex;flex-wrap:wrap;gap:.65rem;margin-bottom:1.2rem}
+.hero__badge{display:inline-flex;align-items:center;justify-content:center;background:rgba(201,162,75,.18);border:1px solid rgba(201,162,75,.5);
+  color:var(--gold-100);padding:.48rem 1rem;border-radius:999px;font-weight:800;font-size:.92rem}
+.hero__badge--lead{background:linear-gradient(135deg,var(--gold),var(--gold-600));color:#fff;border-color:transparent;box-shadow:0 8px 18px rgba(201,162,75,.28)}
 .hero__title{color:#fff;font-size:clamp(2.1rem,5.5vw,3.6rem);font-weight:900;margin-bottom:1rem}
 .hero__sub{font-size:clamp(1.02rem,2.2vw,1.22rem);color:#e6eaf2;max-width:600px;margin-bottom:1.8rem}
 .hero__sub strong{color:var(--gold)}
 .hero__cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-bottom:1.8rem}
-.hero__trust{display:flex;flex-wrap:wrap;gap:1rem 1.6rem}
-.hero__trust li{display:flex;align-items:center;gap:.45rem;font-weight:500;color:#dfe5f0;font-size:.96rem}
-.hero__trust svg{color:var(--gold);background:rgba(201,162,75,.15);border-radius:50%;padding:3px;width:1.5em;height:1.5em}
+.hero__trust{display:flex;flex-wrap:wrap;gap:.7rem}
+.hero__trust li{display:inline-flex;align-items:center;gap:.45rem;font-weight:700;color:#eef3fb;font-size:.95rem;padding:.7rem .95rem;border-radius:999px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(2px)}
+.hero__trust svg{color:var(--gold);background:rgba(201,162,75,.15);border-radius:50%;padding:3px;width:1.35em;height:1.35em;flex-shrink:0}
 
 /* ---------- Stats ---------- */
 .stats{background:var(--navy);color:#fff;position:relative;margin-top:-1px}
@@ -323,20 +327,21 @@ svg{width:1em;height:1em;fill:currentColor}
   body{font-size:16px;padding-bottom:72px}      /* room for sticky mobile CTA */
   .container{width:min(100% - 28px,var(--container))}
 
-  /* Off-canvas nav + scrim (contained — no horizontal overflow) */
-  .header__cta{display:none}
-  .nav{position:fixed;top:0;bottom:0;right:0;width:78%;max-width:300px;flex-direction:column;background:#fff;
-    padding:4.8rem 1.4rem 2rem;margin:0;gap:.25rem;box-shadow:-12px 0 44px rgba(0,0,0,.22);
-    transform:translateX(100%);transition:transform .35s var(--ease);z-index:60;overflow-y:auto}
-  .nav.is-open{transform:translateX(0)}
-  .nav__link{padding:.95rem .6rem;border-bottom:1px solid var(--line);font-size:1.08rem;border-radius:0}
+  /* Dropdown nav on mobile */
+  .header__cta{display:flex;gap:.45rem;margin-inline-start:auto}
+  .header__cta .btn{width:44px;height:44px;padding:0;border-radius:14px;font-size:0;box-shadow:none}
+  .header__cta .btn svg{width:1.15em;height:1.15em;margin:0}
+  .header__cta .btn__label{display:none}
+  .nav{position:absolute;top:100%;inset-inline:0;display:flex;flex-direction:column;align-items:stretch;gap:0;
+    background:var(--navy-900);margin:0;padding:0 1rem;max-height:0;overflow:hidden;opacity:0;pointer-events:none;
+    transition:max-height .35s var(--ease),opacity .2s var(--ease);z-index:49;border-top:1px solid rgba(255,255,255,.08);
+    box-shadow:0 18px 30px rgba(0,0,0,.18)}
+  .nav.is-open{max-height:420px;opacity:1;pointer-events:auto;padding-top:.6rem;padding-bottom:.9rem}
+  .nav__link{padding:.95rem .2rem;border-bottom:1px solid rgba(255,255,255,.08);font-size:1.04rem;border-radius:0;color:#fff;text-align:start}
   .nav__link:last-child{border-bottom:0}
-  .nav-toggle{display:flex;position:relative;z-index:62;margin-inline-start:auto;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+  .nav-toggle{display:flex;position:relative;z-index:62;margin-inline-start:0;min-width:44px;min-height:44px;align-items:center;justify-content:center}
   body.nav-open{overflow:hidden}
-  /* scrim sits BELOW the header stacking context (z-index:50) so the off-canvas nav stays visible above it */
-  body.nav-open::after{content:'';position:fixed;inset:0;background:rgba(16,22,40,.5);z-index:45;backdrop-filter:blur(2px)}
-  /* hide floating actions while the menu is open so they don't poke through the scrim */
-  body.nav-open .wa-float,body.nav-open .mobile-cta{opacity:0;pointer-events:none}
+  body.nav-open .wa-float,body.nav-open .mobile-cta{opacity:1;pointer-events:auto}
 
   /* Topbar — condensed to one neat line */
   .topbar{font-size:.74rem}
@@ -352,13 +357,15 @@ svg{width:1em;height:1em;fill:currentColor}
   .hero{min-height:auto}
   .hero__content{padding:2.4rem 0 2.8rem;max-width:100%}
   .hero__logo{height:64px;margin-bottom:.9rem}
-  .hero__badge{font-size:.82rem;padding:.35rem .85rem;margin-bottom:1rem}
+  .hero__badges{gap:.45rem;margin-bottom:.95rem}
+  .hero__badge{font-size:.8rem;padding:.38rem .75rem}
   .hero__title{font-size:clamp(1.9rem,8.5vw,2.6rem)}
   .hero__sub{font-size:1.02rem;margin-bottom:1.4rem}
   .hero__cta{flex-direction:column;gap:.7rem;margin-bottom:1.5rem}
   .hero__cta .btn{width:100%;white-space:normal;padding:.95rem 1rem;line-height:1.4}
-  .hero__trust{gap:.55rem}
-  .hero__trust li{width:100%;font-size:.92rem}
+  .hero__trust{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem}
+  .hero__trust li{width:100%;font-size:.86rem;justify-content:center;text-align:center;padding:.7rem .55rem;min-height:56px}
+  .hero__trust svg{margin-inline-start:0}
 
   /* Sections spacing + headings */
   .section{padding:2.8rem 0}

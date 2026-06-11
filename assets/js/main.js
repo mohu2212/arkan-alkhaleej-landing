@@ -1,9 +1,9 @@
 /* ============================================================
-   أركان الخليج — Landing page interactions (vanilla JS)
+  أركان نجد المعمارية — Landing page interactions (vanilla JS)
    ============================================================ */
 (function () {
   'use strict';
-  const WA_NUMBER = '966552171713';
+  const WA_NUMBER = '966552710713';
   const $  = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
 
@@ -154,7 +154,7 @@
       const city = $('#city').value.trim();
       const note = $('#note').value.trim();
       const lines = [
-        'السلام عليكم، أرغب في طلب معاينة مجانية لمشروعي من شركة أركان الخليج.',
+        'السلام عليكم، أرغب في طلب معاينة مجانية لمشروعي من شركة أركان نجد المعمارية.',
         '',
         '• الاسم: ' + name.value.trim(),
         '• نوع المشروع: ' + ptype.value,
