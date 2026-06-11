@@ -88,7 +88,7 @@ svg{width:1em;height:1em;fill:currentColor}
 .header__inner{display:flex;align-items:center;gap:1rem;padding:.7rem 0}
 .brand{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
 .brand__logo{width:auto;height:46px;object-fit:contain}
-.brand__text{display:flex;flex-direction:column;line-height:1.15}
+.brand__text{display:flex;flex-direction:column;line-height:1.3;gap:.14rem}
 .brand__text strong{font-family:'Cairo',sans-serif;font-size:1.18rem;color:var(--navy);font-weight:900}
 .brand__text small{font-size:.78rem;color:var(--gold-600);font-weight:700}
 .nav{display:flex;gap:.35rem;margin-inline-start:auto}
@@ -276,7 +276,7 @@ svg{width:1em;height:1em;fill:currentColor}
 .footer__bar p{font-size:.85rem;color:#8c97b0}
 .footer__powered a{color:var(--gold);font-weight:700;transition:color .2s}
 .footer__powered a:hover{color:#fff;text-decoration:underline}
-@media (max-width:768px){.footer__bar-inner{justify-content:center;text-align:center}}
+@media (max-width:768px){.footer__bar-inner{flex-direction:column;align-items:flex-start;justify-content:flex-start;text-align:start;gap:.35rem}}
 
 /* ---------- Floating WhatsApp ---------- */
 .wa-float{position:fixed;inset-inline-start:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;
@@ -405,15 +405,20 @@ svg{width:1em;height:1em;fill:currentColor}
   .contact__form{padding:1.5rem}
   .field input,.field select,.field textarea{font-size:16px}   /* prevent iOS zoom */
 
-  /* Footer — tighter, cleaner on mobile */
-  .footer{padding-top:2.2rem}
-  .footer__grid{grid-template-columns:1fr;gap:1.4rem;padding-bottom:1.6rem;text-align:center}
-  .footer__brand img{height:48px}
-  .footer__brand p{margin-inline:auto;font-size:.88rem;max-width:300px}
-  .footer__col h4{margin-bottom:.5rem}
-  .footer__col a,.footer__col span{padding:.18rem 0;line-height:1.5;font-size:.92rem}
-  .footer__col--contact .fc-item{justify-content:center;padding:.32rem 0}
-  .footer__col--contact .fc-item span{text-align:start}
+  /* Footer — professional, start-aligned redesign on mobile */
+  .footer{padding-top:2.4rem}
+  .footer__grid{grid-template-columns:1fr;gap:0;padding-bottom:1.4rem;text-align:start}
+  .footer__brand{padding-bottom:1.5rem}
+  .footer__brand img{height:46px}
+  .footer__brand p{margin:0;max-width:none;font-size:.9rem;line-height:1.7}
+  .footer__col{padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.08)}
+  .footer__col h4{margin-bottom:.9rem;padding-bottom:.45rem;position:relative}
+  .footer__col h4::after{content:'';position:absolute;bottom:0;inset-inline-start:0;width:34px;height:2px;background:var(--gold);border-radius:2px}
+  .footer__col a,.footer__col span{padding:.3rem 0;line-height:1.6;font-size:.94rem}
+  .footer__col--links a{display:flex;align-items:center;gap:.55rem}
+  .footer__col--links a::before{content:'';width:6px;height:6px;border-radius:1px;background:var(--gold);flex-shrink:0;transition:transform .2s}
+  .footer__col--links a:hover::before{transform:scale(1.4)}
+  .footer__col--contact .fc-item{justify-content:flex-start;padding:.4rem 0}
 
   /* Floating + sticky CTA */
   .mobile-cta{display:flex}
