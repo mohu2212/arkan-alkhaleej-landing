@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mohu2212.github.io/arkan-alkhaleej-landing/sitemap.xml

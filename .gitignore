@@ -1,0 +1,12 @@
+# مصدر الداتا الخام (صور أصلية + فيديوهات + ملف Word) — لا يُرفع
+project 2/
+
+# ملفات النظام والمؤقتة
+.DS_Store
+_measure.html
+og.html
+*.log
+.claude/
+
+# دليل وكالة أخرى — لا يُنشر
+PROJECT-GUIDE.md
