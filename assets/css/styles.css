@@ -464,3 +464,20 @@ svg{width:1em;height:1em;fill:currentColor}
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
 }
+
+/* ============================================================
+   الأسئلة الشائعة (FAQ) — accordion عبر <details>
+   ============================================================ */
+.faq{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:.85rem}
+.faq__item{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-sm);box-shadow:var(--shadow);overflow:hidden;transition:border-color .25s var(--ease)}
+.faq__item[open]{border-color:var(--gold)}
+.faq__item summary{list-style:none;cursor:pointer;padding:1.1rem 1.25rem;font-weight:700;color:var(--navy);font-size:1.05rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.faq__item summary::-webkit-details-marker{display:none}
+.faq__item summary::after{content:"+";color:var(--gold);font-size:1.5rem;font-weight:700;line-height:1;transition:transform .25s var(--ease)}
+.faq__item[open] summary::after{transform:rotate(45deg)}
+.faq__item p{margin:0;padding:0 1.25rem 1.15rem;color:var(--muted);font-size:.98rem;line-height:1.85}
+.footer__keywords{margin-top:.65rem;color:var(--muted);font-size:.82rem;line-height:1.9;opacity:.85}
+@media (max-width:640px){
+  .faq__item summary{font-size:.98rem;padding:.95rem 1rem}
+  .faq__item p{padding:0 1rem 1rem;font-size:.92rem}
+}
